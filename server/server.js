@@ -11,7 +11,7 @@ dotenv.config();
 app.use(
   cors({
     // Allow requests from specific origins (replace '*' with your frontend's URL)
-    origin: "https://ecommerce-tau-khaki-89.vercel.app", // You should set this to your frontend's URL in production.
+    origin: "https://ecommerce-2skkhcgez-sunshadeshine.vercel.app/", // You should set this to your frontend's URL in production.
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // Specify the HTTP methods you want to allow
     optionsSuccessStatus: 204, // Send a 204 status code for preflight requests
   })
