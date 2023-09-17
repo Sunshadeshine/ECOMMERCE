@@ -6,6 +6,7 @@ import cors from "cors";
 import connectDB from "./config/db.js";
 import { default as routes } from "./routes/index.js";
 const app = express();
+
 //confgure env
 dotenv.config();
 const corsOptions = {
@@ -19,6 +20,10 @@ app.use(cors(corsOptions));
 connectDB();
 //body-parser is inherited in express now
 //middleware
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  next();
+});
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
