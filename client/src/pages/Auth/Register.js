@@ -17,7 +17,7 @@ const Register = () => {
 
     try {
       const res = await axios.post(
-        `http://localhost:8080/api/v1/auth/register`,
+        `https://ecommerce-tau-khaki-89.vercel.app/api/v1/auth/register`,
         {
           name,
           email,
