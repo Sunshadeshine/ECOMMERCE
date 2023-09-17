@@ -8,14 +8,13 @@ import { default as routes } from "./routes/index.js";
 const app = express();
 //confgure env
 dotenv.config();
-app.use(
-  cors({
-    // Allow requests from specific origins (replace '*' with your frontend's URL)
-    origin: "https://ecommerce-xd6d.vercel.app/", // You should set this to your frontend's URL in production.
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // Specify the HTTP methods you want to allow
-    optionsSuccessStatus: 204, // Send a 204 status code for preflight requests
-  })
-);
+const corsOptions = {
+  origin: 'https://ecommerce-xd6d.vercel.app',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  optionsSuccessStatus: 204,
+};
+
+app.use(cors(corsOptions));
 //database connection
 connectDB();
 //body-parser is inherited in express now
