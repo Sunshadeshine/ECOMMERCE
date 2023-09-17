@@ -26,7 +26,7 @@ app.use(morgan("dev"));
 
 // const db = require('./config/mongoose');
 app.use("/", routes);
-const port = process.env.PORT;
+const port = 8080;
 app.listen(port, function (err) {
   if (err) {
     console.log(`Error in running the server: ${err}`.bgRed.yellow);
