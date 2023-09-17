@@ -2,29 +2,29 @@ import express from "express";
 import colors from "colors";
 import dotenv from "dotenv";
 import morgan from "morgan"; // used when we want to get url and details hitted on the app
-import cors from "cors";
+// import cors from "cors";
 import connectDB from "./config/db.js";
 import { default as routes } from "./routes/index.js";
 const app = express();
 
 //confgure env
 dotenv.config();
-const corsOptions = {
-  origin: 'https://ecommerce-xd6d.vercel.app',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  optionsSuccessStatus: 204,
-};
+// const corsOptions = {
+//   origin: 'https://ecommerce-xd6d.vercel.app',
+//   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+//   optionsSuccessStatus: 204,
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 //database connection
 connectDB();
 //body-parser is inherited in express now
 //middleware
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  next();
-});
-app.use(cors());
+// app.use((req, res, next) => {
+//   res.setHeader('Access-Control-Allow-Origin', '*');
+//   next();
+// });
+// app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
 
