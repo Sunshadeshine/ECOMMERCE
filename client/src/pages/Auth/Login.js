@@ -14,7 +14,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const res = await axios.post(`https://ecommerce-tau-khaki-89.vercel.app/api/v1/auth/login`, {
+      const res = await axios.post(`https://ecommerce-n3zfkhcgb-sunshadeshine.vercel.app/api/v1/auth/login`, {
         email,
         password,
       });
