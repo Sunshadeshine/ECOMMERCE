@@ -26,7 +26,7 @@ const UpdateProducts = () => {
   const getSingleProduct = async () => {
     try {
       const { data } = await axios.get(
-        `/api/v1/product/get-product/${params.slug}`
+        `https://ecommerce-tau-khaki-89.vercel.app/api/v1/product/get-product/${params.slug}`
       );
       setName(data.product.name);
       setId(data.product._id);
@@ -47,7 +47,7 @@ const UpdateProducts = () => {
   //get all category
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get(`/api/v1/category/get-category`);
+      const { data } = await axios.get(`https://ecommerce-tau-khaki-89.vercel.app/api/v1/category/get-category`);
       if (data?.success) {
         setCategories(data?.category);
       }
@@ -100,7 +100,7 @@ const UpdateProducts = () => {
       if (!answer) return;
       else if (answer == "yes" || answer == "YES" || answer == "Yes") {
         const { data } = await axios.delete(
-          `/api/v1/product/delete-product/${id}`
+          `https://ecommerce-tau-khaki-89.vercel.app/api/v1/product/delete-product/${id}`
         );
         setTimeout(() => {
           toast.success("Product Deleted Successfully");
@@ -167,7 +167,7 @@ const UpdateProducts = () => {
                 ) : (
                   <div className="text-center">
                     <img
-                      src={`/api/v1/product/product-photo/${id}`}
+                      src={`https://ecommerce-tau-khaki-89.vercel.app/api/v1/product/product-photo/${id}`}
                       alt="product_photo"
                       height={"200px"}
                       className="img img-responsive"
