@@ -23,7 +23,7 @@ const Products = () => {
   //get all cat
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get(`/api/v1/category/get-category`);
+      const { data } = await axios.get(`https://ecommerce-tau-khaki-89.vercel.app/api/v1/category/get-category`);
       if (data?.success) {
         setCategories(data?.category);
       }
@@ -40,7 +40,7 @@ const Products = () => {
   const getAllProducts = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get(`/api/v1/product/product-list/${page}`);
+      const { data } = await axios.get(`https://ecommerce-tau-khaki-89.vercel.app/api/v1/product/product-list/${page}`);
       setLoading(false);
       setProducts(data.products);
     } catch (error) {
@@ -52,7 +52,7 @@ const Products = () => {
   //getTOtal COunt
   const getTotal = async () => {
     try {
-      const { data } = await axios.get(`/api/v1/product/product-count`);
+      const { data } = await axios.get(`https://ecommerce-tau-khaki-89.vercel.app/api/v1/product/product-count`);
       setTotal(data?.total);
     } catch (error) {
       console.log(error);
@@ -67,7 +67,7 @@ const Products = () => {
   const loadMore = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get(`/api/v1/product/product-list/${page}`);
+      const { data } = await axios.get(`https://ecommerce-tau-khaki-89.vercel.app/api/v1/product/product-list/${page}`);
       setLoading(false);
       setProducts([...products, ...data?.products]);
     } catch (error) {
@@ -97,7 +97,7 @@ const Products = () => {
   //get filterd product
   const filterProduct = async () => {
     try {
-      const { data } = await axios.post(`/api/v1/product/product-filters`, {
+      const { data } = await axios.post(`https://ecommerce-tau-khaki-89.vercel.app/api/v1/product/product-filters`, {
         checked,
         radio,
       });
@@ -147,7 +147,7 @@ const Products = () => {
             {products?.map((product) => (
               <div className="card m-2" key={product._id}>
                 <img
-                  src={`/api/v1/product/product-photo/${product._id}`}
+                  src={`https://ecommerce-tau-khaki-89.vercel.app/api/v1/product/product-photo/${product._id}`}
                   className="card-img-top"
                   alt={product.name}
                 />
