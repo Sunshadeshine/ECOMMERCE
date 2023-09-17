@@ -19,11 +19,11 @@ app.use(cors(corsOptions));
 //database connection
 connectDB();
 //body-parser is inherited in express now
-//middleware
-// app.use((req, res, next) => {
-//   res.setHeader('Access-Control-Allow-Origin', '*');
-//   next();
-// });
+// middleware
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  next();
+});
 // app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
