@@ -99,7 +99,7 @@ const Products = () => {
   // Get all products
   const getAllProducts = async () => {
     try {
-      const { data } = await axios.get(`/api/v1/product/get-product`);
+      const { data } = await axios.get(`https://ecommerce-tau-khaki-89.vercel.app/api/v1/product/get-product`);
       setProducts(data.products);
     } catch (error) {
       console.log(error);
@@ -110,7 +110,7 @@ const Products = () => {
   // Get category information for each product
   const getCategoryInfo = async () => {
     try {
-      const { data } = await axios.get(`/api/v1/category/get-category`);
+      const { data } = await axios.get(`https://ecommerce-tau-khaki-89.vercel.app/api/v1/category/get-category`);
       const categoryMap = {};
       data.category.forEach((cate) => {
         categoryMap[cate._id] = cate;
@@ -156,7 +156,7 @@ const Products = () => {
                         style={{ width: "12rem" }}
                       >
                         <img
-                          src={`/api/v1/product/product-photo/${p._id}`}
+                          src={`https://ecommerce-tau-khaki-89.vercel.app/api/v1/product/product-photo/${p._id}`}
                           className="card-img-top"
                           alt={p.name}
                         />
